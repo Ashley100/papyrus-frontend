@@ -1,0 +1,12 @@
+.icon {
+    /* icon width */
+    --uif-icon-width-lg: 32px;
+    --uif-icon-width-md: 24px;
+    --uif-icon-width-sm: 16px;
+}
+
+.icon { display: inline-flex; transition: opacity .2s ease-in-out; }
+
+.icon.size-lg { max-width: var(--uif-icon-width-lg); }
+.icon.size-md { max-width: var(--uif-icon-width-md); }
+.icon.size-sm { max-width: var(--uif-icon-width-sm); }

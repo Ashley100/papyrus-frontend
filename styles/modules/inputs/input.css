@@ -1,0 +1,82 @@
+.input {
+
+    /* size */
+    --uif-input-p-lg: 34px;
+    --uif-input-p-md: 28px;
+    --uif-input-p-sm: 14px 24px;
+
+    /* radius */
+    --uif-input-r-lg: 18px;
+    --uif-input-r-md: 12px;
+    --uif-input-r-sm: 8px;
+
+    /* width */
+    --uif-input-width-full: 100%;
+    --uif-input-width-half: 50%;
+    --uif-input-width-lg: 280px;
+    --uif-input-width-md: 240px;
+    --uif-input-width-sm: 120px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+
+.input {
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 240px;
+    background-color: var(--uif-gray-3);
+    border: 1px solid var(--uif-gray-3);
+    border-radius: var(--uif-input-r-sm);
+    font-size: 14px;
+    color: var(--uif-black-5);
+    padding: var(--uif-input-p-sm);
+
+    transition: .2s ease-in-out;
+}
+
+
+/* width */
+.input.fixed-full { max-width: var(--uif-input-width-full); }
+.input.fixed-half { max-width: calc(var(--uif-input-width-half) - 1px); }
+.input.fixed-lg { max-width: var(--uif-input-width-lg); }
+.input.fixed-md { max-width: var(--uif-input-width-md); }
+.input.fixed-sm { max-width: var(--uif-input-width-sm); }
+
+
+.input::placeholder { color: var(--uif-gray-5); }
+.input:focus { border-color: #3A6EF3;  background-color: transparent; }
+
+
+.form .fields__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.form .fields__group * { flex-shrink: 0; }
+.form .fields__group .input { width: calc(50% - 10px); }
+@media (max-width: 520px) {
+    .form .fields__group .input { min-width: 100%; margin-bottom: 20px; }
+    .form .fields__group .input:last-child { margin-bottom: 0; }
+}

@@ -1,0 +1,36 @@
+.header {
+  width: 100%;
+  height: 72px;
+  background: #fff;
+  box-shadow: 8px 8px 40px 10px rgba(187, 187, 187, 0.12);
+
+  &__wrapper {
+    height: 100%;
+    align-items: center;
+  }
+
+  &__left { display: flex; align-items: center; }
+  &__center {}
+  &__right {}
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    width: 24px;
+    height: 26px;
+  }
+  .logo__wrapper {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 2px solid var(--uif-blue-1);
+  }
+  .logo__ps {
+    width: 31px;
+    height: 31px;
+    margin-left: 12px;
+  }
+}

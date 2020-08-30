@@ -1,0 +1,79 @@
+.uif.field {
+    /*roots*/
+
+    /* width */
+    --uif-field-width-full: 100%;
+    --uif-field-width-half: 50%;
+    --uif-field-width-lg: 280px;
+    --uif-field-width-md: 240px;
+    --uif-field-width-sm: 120px;
+}
+
+.uif.field {
+    display: flex; flex-direction: column;
+}
+
+.uif.field.size-full { width: var(--uif-field-width-full); }
+.uif.field.size-half { width: var(--uif-field-width-half); }
+.uif.field.size-lg { width: var(--uif-field-width-lg); }
+.uif.field.size-md { width: var(--uif-field-width-md); }
+.uif.field.size-sm { width: var(--uif-field-width-sm); }
+
+    /*width title*/
+.uif.field .field__title {
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    font-size: 15px;
+    line-height: 16px;
+    margin-bottom: 12px;
+    font-family: inherit;
+}
+
+/*width message*/
+.uif.field .field__message { display: inline-block; margin-top: 8px; font-size: 12px; }
+.uif.field .field__message.hidden { display: none; }
+.uif.field.error .field__message {  color: var(--uif-red-1); }
+.uif.field.error .field__message.hidden { display: inline-block; }
+
+/*width title required*/
+.uif.field.required .field__title:after {
+    content: '*';
+    position: absolute; top: 0; left: 101%;
+    color: var(--uif-red-1);
+}
+.uif.field.required .info.field__title:after { left: calc(100% - 25px); }
+
+/*width title info*/
+.uif.field .field__title.info { display: flex; align-items: center }
+.uif.field .field__title.info .icon { margin-top: -2px; margin-left: 8px; color: var(--uif-blue-1); cursor: pointer; }
+.uif.field.required .field__title.info .icon { margin-left: 12px; }
+
+/*width icon*/
+.uif.field .field__input { position: relative; display: inline-block; width: 100%; }
+/*.uif.field .field__input.icon .icon {*/
+/*    position: absolute;*/
+/*    left: 10px; top: 0; bottom: 0; margin: auto 0; height: max-content;*/
+/*}*/
+/*.uif.field .field__input.icon input { padding-left: unset; }*/
+
+/*width left icon*/
+.uif.field .field__input.icon.left .icon {
+    position: absolute;
+    left: 10px; top: 0; bottom: 0; margin: auto 0; height: max-content;
+}
+.uif.field .field__input.icon.left input { padding-left: 40px; }
+
+/*width right icon*/
+.uif.field .field__input.icon.right .icon {
+    position: absolute;
+    right: 10px; top: 0; bottom: 0; margin: auto 0; height: max-content;
+}
+.uif.field .field__input.icon.right input { padding-right: 40px; }
+
+/*error*/
+.uif.field.error input:required {
+    border: 1px solid var(--uif-red-1);
+    background: var(--uif-white-1);
+}
+.uif.field.error .icon { color: var(--uif-red-1); }

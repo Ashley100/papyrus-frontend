@@ -1,0 +1,68 @@
+.uif {
+    /* blacks */
+    --uif-black-1: #000000;
+    --uif-black-2: #181818;
+    --uif-black-3: #262626;
+    --uif-black-4: #343434;
+    --uif-black-5: #3D3D3D;
+    --uif-black-6: #565656;
+
+    /* white */
+    --uif-white-1: #ffffff;
+
+    /* gray */
+    --uif-gray-1: #F8F7FC;
+    --uif-gray-2: #ECEAEA;
+    --uif-gray-3: #EFF1FA;
+    --uif-gray-4: #C2CEDF;
+    --uif-gray-5: #D8DBE8;
+    --uif-gray-6: #D8DBE8;
+    --uif-gray-7: #E8EBEE;
+
+    /* blue */
+    --uif-blue-1: #3A6EF3;
+
+    /* violet */
+    --uif-violet-1: #4B48DA;
+
+    /* red */
+    --uif-red-1: #EB5757;
+
+    /* shadows */
+    --uif-shadow-black-1: 0px 4px 14px #818181;
+    --uif-shadow-violet-1: 0px 4px 14px #4A79F0;
+}
+
+
+.b-black-1 { background: var(--uif-black-1); } .c-black-1 { color: var(--uif-black-1); }
+.b-black-2 { background: var(--uif-black-2); } .c-black-2 { color: var(--uif-black-2); } 
+.b-black-3 { background: var(--uif-black-3); } .c-black-3 { color: var(--uif-black-3); } 
+.b-black-4 { background: var(--uif-black-4); } .c-black-4 { color: var(--uif-black-4); } 
+.b-black-5 { background: var(--uif-black-5); } .c-black-5 { color: var(--uif-black-5); } 
+.b-black-6 { background: var(--uif-black-6); } .c-black-6 { color: var(--uif-black-6); } 
+
+.b-white-1 { background: var(--uif-white-1); } .c-white-1 { color: var(--uif-white-1); } 
+
+.b-gray-1 { background: var(--uif-gray-1); } .c-gray-1 { color: var(--uif-gray-1); } 
+.b-gray-2 { background: var(--uif-gray-2); } .c-gray-2 { color: var(--uif-gray-2); } 
+.b-gray-3 { background: var(--uif-gray-3); } .c-gray-3 { color: var(--uif-gray-3); } 
+.b-gray-4 { background: var(--uif-gray-4); } .c-gray-4 { color: var(--uif-gray-4); } 
+.b-gray-5 { background: var(--uif-gray-5); } .c-gray-5 { color: var(--uif-gray-5); } 
+.b-gray-6 { background: var(--uif-gray-6); } .c-gray-6 { color: var(--uif-gray-6); } 
+
+.b-blue-1 { background: var(--uif-blue-1); } .c-blue-1 { color: var(--uif-blue-1); } 
+
+.b-violet-1 { background: var(--uif-violet-1); } .c-violet-1 { color: var(--uif-violet-1); }
+
+
+/* Shadow */
+.s-black-1 { box-shadow: var(--uif-shadow-black-1); }
+
+.s-violet-1 { box-shadow: var(--uif-shadow-violet-1); }
+
+
+
+/* Hover */
+.h-s-black-1:hover { transition: box-shadow .2s ease-in-out; box-shadow: 0px 4px 14px #818181; }
+
+.h-s-violet-1:hover { transition: box-shadow .2s ease-in-out; box-shadow: 0px 4px 10px #4a79f0a6; }

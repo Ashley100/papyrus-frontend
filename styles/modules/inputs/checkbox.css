@@ -1,0 +1,62 @@
+.uif.checkbox {
+    /*roots*/
+}
+
+
+.uif.checkbox,
+.uif.checkbox .checkbox__label {
+    display: flex; align-items: center;
+    width: max-content;
+    cursor: pointer;
+}
+
+.uif.checkbox input[type="checkbox"] { height: 0; width: 0; padding: 0; margin: 0; user-select: none; pointer-events: none; opacity: 0; overflow: hidden; }
+
+.checkbox__icon {
+    position: relative;
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border: 2px solid var(--uif-black-1);
+    border-radius: 3px;
+    user-select: none;
+    flex-shrink: 0;
+
+    transition: .2s ease-in-out;
+}
+.uif.checkbox input[type="checkbox"]:checked ~ .checkbox__label .checkbox__icon {
+    border: 2px solid var(--uif-blue-1);
+    background: var(--uif-blue-1);
+}
+.checkbox__icon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 13px;
+    height: 12px;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1798 4.89149C11.5703 4.50097 11.5703 3.8678 11.1798 3.47728C10.7892 3.08676 10.1561 3.08676 9.76555 3.47728L11.1798 4.89149ZM2.76257 7.5528C2.37962 7.15485 1.74657 7.14269 1.34862 7.52564C0.950665 7.90859 0.938502 8.54164 1.32145 8.93959L2.76257 7.5528ZM4.18446 10.4726L3.4639 11.166C3.65011 11.3595 3.90632 11.47 4.17485 11.4725C4.44339 11.4751 4.70167 11.3696 4.89157 11.1797L4.18446 10.4726ZM9.76555 3.47728L3.47735 9.76548L4.89157 11.1797L11.1798 4.89149L9.76555 3.47728ZM4.90502 9.77919L2.76257 7.5528L1.32145 8.93959L3.4639 11.166L4.90502 9.77919Z' fill='white'/%3E%3C/svg%3E");
+    transform: scale(0) translateY(10px);
+    transition: .2s ease-in-out;
+}
+.uif.checkbox input[type="checkbox"]:checked ~ .checkbox__label .checkbox__icon:before {
+    transform: scale(1) translateY(0px);
+}
+.checkbox__text { margin-left: 6px; margin-bottom: -1px; user-select: none; font-size: 15px; font-family: "Arial", sans-serif; }
+
+
+/* Modification's */
+.uif.checkbox.solid {
+    padding: 14px 18px; border-radius: 8px;
+    background: var(--uif-gray-3);
+}
+
+.uif.checkbox.bordered {
+    padding: 13px 17px;
+    border-radius: 8px;
+    border: 1px solid var(--uif-blue-1);
+    color: var(--uif-blue-1);
+    background: transparent;
+}.checkbox__icon { border-color: var(--uif-blue-1); }

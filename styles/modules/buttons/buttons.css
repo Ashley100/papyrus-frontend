@@ -1,0 +1,91 @@
+.uif .btn,
+.uif.btn {
+
+    /* size */
+    --uif-btn-p-lg: 34px;
+    --uif-btn-p-md: 28px;
+    --uif-btn-p-sm: 14px;
+
+    /* radius */
+    --uif-btn-r-lg: 34px;
+    --uif-btn-r-md: 28px;
+    --uif-btn-r-sm: 14px;
+
+    /* width */
+    --uif-btn-width-lg: 180px;
+    --uif-btn-width-md: 140px;
+    --uif-btn-width-sm: 120px;
+    
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--uif-black-1);
+    color: var(--uif-white-1);
+
+    transition:
+            opacity, color,
+            .2s ease-in-out;
+}
+
+
+/* size */
+.btn.size-lg { padding: calc(var(--uif-btn-p-lg) / 2) var(--uif-btn-p-lg) calc(var(--uif-btn-p-lg) / 2) var(--uif-btn-p-lg); }
+.btn.size-md { padding: calc(var(--uif-btn-p-md) / 2) var(--uif-btn-p-md) calc(var(--uif-btn-p-md) / 2) var(--uif-btn-p-md); }
+.btn.size-sm { padding: calc(var(--uif-btn-p-sm) / 2) var(--uif-btn-p-sm) calc(var(--uif-btn-p-sm) / 2) var(--uif-btn-p-sm); }
+
+/* width */
+.btn.fixed-lg { min-width: var(--uif-btn-width-lg); }
+.btn.fixed-md { min-width: var(--uif-btn-width-md); }
+.btn.fixed-sm { min-width: var(--uif-btn-width-sm); }
+
+
+
+
+/* BUTTON STATES */
+
+/* loading */
+.btn.loading { position: relative; color: transparent; user-focus: none; user-select: none; pointer-events: none; cursor: default; }
+.btn.loading .icon { opacity: 0; }
+.btn.loading::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    margin: 0px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-color: #fff transparent #fff transparent;
+    animation: anim-btn-loading-circle 1s linear infinite;
+    position: absolute;
+}
+@keyframes anim-btn-loading-circle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.btn.loading::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    background: var(--uif-black-1);
+    border-radius: inherit;
+    animation:  .1s linear forwards anim-btn-loading-bg;
+    transform: scale(0.5);
+    opacity: 0;
+}
+@keyframes anim-btn-loading-bg {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+/* loading / */
+
+

@@ -1,0 +1,14 @@
+[data-uif-r] {
+
+    /* radius */
+    --uif-radius-lg: 24px;
+    --uif-radius-md: 18px;
+    --uif-radius-sm: 14px;
+    --uif-radius-none: 0px;
+
+}
+
+[data-uif-r="lg"] { border-radius: var(--uif-radius-lg); }
+[data-uif-r="md"] { border-radius: var(--uif-radius-md); }
+[data-uif-r="sm"] { border-radius: var(--uif-radius-sm); }
+[data-uif-r="none"] { border-radius: var(--uif-radius-none); }

@@ -1,0 +1,28 @@
+.user {
+  display: flex; align-items: center; justify-content: flex-end;
+
+  &__favorite {
+    stroke: var(--uif-blue-1);
+    color: transparent !important;
+    height: 20px;
+    margin-right: 22px;
+  }
+  &__notification {
+    height: 20px;
+    margin-right: 26px;
+  }
+
+  &__wrapper {
+
+    &__button {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--uif-black-1);
+      color: var(--uif-white-1);
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
