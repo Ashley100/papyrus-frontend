@@ -1,15 +1,48 @@
-import Link from 'next/link'
-import {motion} from "framer-motion";
+import { SubmissionError } from 'redux-form'
+import { useState } from 'react';
+import {motion} from "framer-motion"
 
-import MainLayout from "../../MainLayout";
+import MainLayout from "../../MainLayout"
 import style from './signin.module.scss'
-import Icons from "../../../utils/Icons";
+import SigninForm from "./SigninForm"
+import {authAPI} from "../../../api/auth";
 
 export default function Signin () {
 
-    const init = { x: 24, opacity: 0 }
-    const animation = { x: 0, opacity: 1 }
-    const transition = { duration: 0.5 }
+    const init = { opacity: 0, scale: 0.9 }
+    const animation = { opacity: 1, scale: 1 }
+    const exit = { opacity: 0, scale: 0.9 }
+    const transition = { duration: 0.2 }
+
+    const [loading, setLoading] = useState(false)
+
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+    let onFormSubmit = async function (formData)  {
+        console.log(formData);
+        setLoading( true );
+
+        try {
+            return sleep(1000).then(() => {
+                setLoading(false);
+
+                throw new SubmissionError({
+                    email: 'Some email error from backend!',
+                    password: 'Some password from backend!',
+                    _error: 'Some global error about form!'
+                })
+            })
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+
+    authAPI.getPost(1).then(data => {
+        console.log(data);
+    })
+
+
 
     return (
         <MainLayout>
@@ -18,6 +51,7 @@ export default function Signin () {
                     initial={init}
                     animate={animation}
                     transition={transition}
+                    exit={exit}
                 >
 
                     <div className={`${style.signin__left} lazy`} style={{'backgroundImage': 'url(/assets/login/banner.jpg)'}}>
@@ -27,68 +61,13 @@ export default function Signin () {
                         <p>We took the last flight out. Lily was exhausted by the time the wheels left the ground, fell right to sleep on the boob and cuddled all the way home (a cuddle is a rare treat nowadays so I tried to savour every second!)</p>
                     </div>
 
-                    <form className={style.signin__right}>
-                        <div className="uif field required" data-uif-m=" lg-t">
-                            <div className="field__title info c-black-6">
-                                User login
-                                <i className="uif icon"><span className="far fa-question-circle"></span></i>
-                            </div>
+                    <div className={`${style.signin__right} ${loading && 'loading'}`}>
+                        <SigninForm onSubmit={onFormSubmit}/>
 
-                            <div className="field__input icon left">
-                                <i className="uif icon c-blue-1">
-                                    <span className="fas fa-user"></span>
-                                </i>
-                                <input
-                                    className="uif input fixed-full"
-                                    type="email"
-                                    placeholder="example@gmail.com" required />
-                            </div>
-
-                            <small className="field__message hidden">Password is incorrect!</small>
+                        <div className="form__loading">
+                            <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                         </div>
-
-                        <div className="uif field required" data-uif-m=" lg-t">
-                            <div className="field__title info c-black-6">
-                                User password
-                                <i className="uif icon"><span className="far fa-question-circle"></span></i>
-                            </div>
-
-                            <div className="field__input icon left">
-                                <i className="uif icon c-blue-1"><span className="fas fa-key"></span></i>
-                                <input
-                                    className="uif input fixed-full"
-                                    type="password"
-                                    placeholder="password" required />
-                            </div>
-
-                            <small className="field__message hidden">Password is incorrect!</small>
-                        </div>
-
-                        <label className="uif checkbox" data-uif-m=" md-t">
-                            <input type="checkbox" />
-                            <div className="checkbox__label">
-                                <span className="checkbox__icon"></span>
-                                <span className="checkbox__text">Remember me</span>
-                            </div>
-                        </label>
-
-                        <div className={style.action__wrapper} data-uif-m=" md-t">
-                            <button
-                                className="uif btn size-lg fixed-lg b-blue-1 h-s-violet-1"
-                                data-uif-f="sm"
-                                data-uif-r="sm">
-                                Login
-                                <i className="icon size-md" data-uif-m=" sm-l">
-                                    <Icons icon="login" className={style.loign__icon}/>
-                                </i>
-                            </button>
-
-                            <Link href={'/auth/signup'}><a className={style.link__signup}>Sign up?</a></Link>
-                            <Link href={'/auth/forgotpassword'}><a className={style.link__forgotpassword}>Forgot password?</a></Link>
-
-                        </div>
-
-                    </form>
+                    </div>
 
                 </motion.div>
             </div>

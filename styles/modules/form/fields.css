@@ -72,6 +72,7 @@
 .uif.field .field__input.icon.right input { padding-right: 40px; }
 
 /*error*/
+.uif.field.error input,
 .uif.field.error input:required {
     border: 1px solid var(--uif-red-1);
     background: var(--uif-white-1);

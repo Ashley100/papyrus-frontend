@@ -8,7 +8,7 @@ export default function Icons (props) {
             {
                 props.icon
                 ?
-                    <svg className={`icon icon__${props.icon} ${className} ${size}`} ><use xlinkHref={`#icon__${props.icon}`}></use></svg>
+                    <svg className={`icon icon__${props.icon} ${className} ${size}`} style={props.styles} ><use xlinkHref={`#icon__${props.icon}`}></use></svg>
                 :
                     <span>icon</span>
             }

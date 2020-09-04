@@ -4,3 +4,6 @@
 .icon.icon__favorite { color: var(--uif-blue-1); }
 .icon.icon__notification { color: var(--uif-blue-1); }
 .icon.icon__login { color: var(--uif-white-1); }
+.icon.icon__user { color: var(--uif-blue-1); }
+.icon.icon__password { color: var(--uif-blue-1); }
+.icon.icon__help { color: var(--uif-blue-1); }

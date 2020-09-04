@@ -12,7 +12,7 @@ export default function Header () {
                     <Link href={"/"}>
                         <a className={style.header__logo}>
                             <span className={style.logo__wrapper}><Icons icon='logo' size={'size-lg'} className={style.logo} /></span>
-                            <Icons icon='logo__ps' size={'size-lg'} className={style.logo__ps} />
+                            <Icons icon='logo__ps' size={'size-bg'} className={style.logo__ps} />
                         </a>
                     </Link>
                 </div>

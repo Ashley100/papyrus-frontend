@@ -7,9 +7,10 @@ import Icons from "../../../utils/Icons";
 
 export default function Signup () {
 
-    const init = { x: 24, opacity: 0 }
-    const animation = { x: 0, opacity: 1 }
-    const transition = { duration: 0.5 }
+    const init = { opacity: 0, scale: 0.9 }
+    const animation = { opacity: 1, scale: 1 }
+    const exit = { opacity: 0, scale: 0.9 }
+    const transition = { duration: 0.2 }
 
     return (
         <MainLayout>
@@ -19,6 +20,7 @@ export default function Signup () {
                     initial={init}
                     animate={animation}
                     transition={transition}
+                    exit={exit}
                 >
 
                     <div className={style.signin__left} style={{'backgroundImage': 'url(/assets/login/banner.jpg)'}}>
